@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg effect</title>
+    <link rel="stylesheet" href="./public/bg.effect.css">
+</head>
+
+<body>
+    <section>
+        <img src="./public/images/creationjob.png" data-speed="-5" alt="" class="layer">
+        <!-- <img src="./public/images/creationjob.png" data-speed="5" alt="" class="layer"> -->
+        <h2 class="layer">Parallax</h2>
+    </section>
+    <script>
+        document.addEventListener('mousemove', parallax)
+        function parallax(e) {
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (window.innerWidth - e.pageX * speed) / 100
+                const y = (window.innerHeight - e.pageY * speed) / 100
+
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+            })
+        }
+    </script>
+</body>
+
+</html>
