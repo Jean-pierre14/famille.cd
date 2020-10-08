@@ -4,7 +4,8 @@
     font-family: ubuntu !important;
 }
 header{
-    position: absolute;
+    position: fixed;
+    z-index: 9999;
     top: 0;
     left: 0;
     padding: 0 100px;
