@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: ubuntu !important;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: #262626;
+    width: 100%;
+    box-sizing: border-box;
+}
+header .logo{
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+header nav{
+    float: right;
+    height: 50px;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li{
+    position: relative;
+    list-style: none;
+    display: block;
+}
+header nav ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+header nav ul li a:hover,
+header nav ul li a.active{
+    background: #2196f3;
+}
+header nav ul li > .content-list{
+    position: absolute;
+    top: 60px;
+    padding: 10px;
+    min-width: 300px;
+    background: #2196f3;
+    border-radius: .4em;
+    display: block;
+    transform: translateY(-20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    z-index: 99999;
+}
+header nav ul li > .content-list:before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background: #2196f3;
+}
+header nav ul li:hover .content-list{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+.menu-toggle{
+    color: rgb(255, 255, 255);
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width: 991px){
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    header nav{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+    }
+    
+    header nav.active{
+        left: 0;
+    }
+    header nav ul{
+        display: block;
+        text-align: left;
+    }
+    header ul li a{
+        border-bottom: 1px solid rgba(0,0,0,0.2)
+    }
+}
